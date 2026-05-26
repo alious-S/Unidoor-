@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:UNIDOOR_FRONTEND/historiques.dart';
-import 'package:UNIDOOR_FRONTEND/horaires.dart';
+import 'package:recherche/historiques.dart';
+import 'package:recherche/horaires.dart';
 
-void main() => runApp(const Acceuil());
+void main() => runApp(const Projet());
 
-class Acceuil extends StatelessWidget {
-  const Acceuil({super.key});
+class Projet extends StatelessWidget {
+  const Projet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +111,6 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 }
 
-// ✅ CONTENU DU DASHBOARD (séparé pour navigation interne)
 class DashboardContent extends StatelessWidget {
   const DashboardContent({super.key});
 
@@ -122,10 +121,6 @@ class DashboardContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildHeader(),
-          const SizedBox(height: 30),
-          _buildTopCards(),
-          const SizedBox(height: 40),
           const Text(
             "État des Salles",
             style: TextStyle(
@@ -137,124 +132,6 @@ class DashboardContent extends StatelessWidget {
           const SizedBox(height: 20),
         ],
       ),
-    );
-  }
-
-  Widget _buildHeader() {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Bonjour",
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF003366),
-              ),
-            ),
-            Text(
-              "Voici l'état actuel de vos salles assignées.",
-              style: TextStyle(color: Colors.grey),
-            ),
-          ],
-        ),
-        Icon(Icons.search, color: Colors.grey),
-      ],
-    );
-  }
-
-  Widget _buildTopCards() {
-    return Row(
-      children: [
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "SALLES ACTIVES",
-                  style: TextStyle(
-                    letterSpacing: 1.2,
-                    fontSize: 12,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  "4 / 12",
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF003366),
-                  ),
-                ),
-                SizedBox(height: 10),
-                Chip(
-                  label: Text("Accès fluides"),
-                  backgroundColor: Color(0xFFDCFCE7),
-                  labelStyle: TextStyle(color: Colors.green),
-                ),
-              ],
-            ),
-          ),
-        ),
-        const SizedBox(width: 20),
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              color: const Color(0xFF003366),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "PROCHAIN COURS",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "Mathématiques Avancées",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const Text(
-                  "Salle C • Dans 15 min",
-                  style: TextStyle(color: Colors.white70),
-                ),
-                const SizedBox(height: 15),
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.vpn_key_outlined, size: 18),
-                  label: const Text("Pré-déverrouiller"),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white24,
-                    foregroundColor: Colors.white,
-                    elevation: 0,
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
