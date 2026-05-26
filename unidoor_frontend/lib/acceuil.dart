@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:recherche/historiques.dart';
 import 'package:recherche/horaires.dart';
 
-void main() => runApp(const Projet());
+void main() => runApp(const Acceuil());
 
-class Projet extends StatelessWidget {
-  const Projet({super.key});
+class Acceuil extends StatelessWidget {
+  const Acceuil({super.key});
 
   @override
   Widget build(BuildContext context) {
